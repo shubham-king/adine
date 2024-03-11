@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Payment </title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+    :root {
+  --color-background: #fae3ea;
+  --color-primary: #fc8080;
+  --font-family-base: Poppin, sans-serif;
+  --font-size-h1: 1.25rem;
+  --font-size-h2: 1rem;
+}
+
+
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #fae3ea;
+  background-color: var(--color-background);
+  display: grid;
+  font-family: Poppin, sans-serif;
+  font-family: var(--font-family-base);
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0vmin;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  place-items: center;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.25rem;
+  font-size: var(--font-size-h1);
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 1rem;
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  padding: 0;
+}
+
+input {
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+
+input[type="radio"] {
+  accent-color: #fc8080;
+  accent-color: var(--color-primary);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tbody {
+  color: #b4b4b4;
+}
+
+td {
+  padding-top: 0.125em;
+  padding-bottom: 0.125em;
+}
+
+tfoot {
+  border-top: 1px solid #b4b4b4;
+  font-weight: 600;
+}
+
+.align {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  place-items: center;
+}
+
+.button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fc8080;
+  background-color: var(--color-primary);
+  border-radius: 999em;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 0.5em;
+  gap: 0.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  padding-left: 1em;
+  padding-right: 1em;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.button:focus,
+.button:hover {
+  background-color: #e96363;
+}
+
+.button--full {
+  width: 100%;
+}
+
+.card {
+  border-radius: 1em;
+  background-color: #fc8080;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1em;
+}
+
+.form {
+  display: grid;
+  grid-gap: 2em;
+  gap: 2em;
+}
+
+.form__radios {
+  display: grid;
+  grid-gap: 1em;
+  gap: 1em;
+}
+
+.form__radio {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fefdfe;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+          box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em;
+}
+
+.form__radio label {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  grid-gap: 1em;
+  gap: 1em;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.icon {
+  height: 2em;
+  display: inline-block;
+  fill: currentColor;
+  width: 2em;
+  vertical-align: middle;
+}
+
+.iphone {
+  background-color: #fbf6f7;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fbf6f7), to(#fff));
+  background-image: -o-linear-gradient(top, #fbf6f7, #fff);
+  background-image: linear-gradient(to bottom, #fbf6f7, #fff);
+  border-radius: 2em;
+  height: 812px;
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+          box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+  width: 375px;
+  overflow: auto;
+  padding: 2em;
+}
+
+  #warningMessage {
+            display: none;
+            color: red;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+</style>
+
+
+
+</head>
+<body>
+    
+          
+<!-- partial:index.partial.html -->
+<div class="iphone">
+  <header class="header">
+    <h1>Checkout</h1>
+  </header>
+
+  <form action="https://httpbin.org/post" class="form" method="POST" id="checkoutForm">
+    <div>
+      <h2>Ticket Details</h2>
+
+      <div class="card">
+        <address>
+          Whirlwind Mobile Phone Cooler for Gaming 
+        </address>
+      </div>
+    </div>
+
+    <fieldset>
+      <legend>Payment Method</legend>
+
+
+     
+      <div class="form__radios">
+        <div class="form__radio">
+          <label for="paytm">
+              
+            <img src="https://www.logo.wine/a/logo/Paytm/Paytm-Logo.wine.svg" class="icon">  
+              Paytm</label>
+           <input type="radio" name="paymentOption" value="paytm">  <!-- mine -->     
+        </div>
+
+        <div class="form__radio">
+          <label for="phonepe"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/phonepe-logo-icon.png" class="icon">PhonePe</label>
+            
+          <input type="radio" name="paymentOption" value="phonepe">
+          
+          
+        </div>
+
+        <div class="form__radio">
+          <label for="googlepay">
+              <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-pay-icon.png" class="icon">Google Pay</label>
+            
+          <input type="radio" name="paymentOption" value="googlepay">
+        </div>
+        
+      <div class="form__radio">
+          <label for="others"><img src="https://cdn.uxhack.co/product_logos/bhim_logo_2.png" class="icon">Others</label>
+            
+          <input type="radio" name="paymentOption" value="others" checked>
+          
+          
+        </div>  
+        
+        
+        
+        
+      </div>
+      
+      
+    </fieldset>
+
+    <div>
+      <h2>Shopping Bill</h2>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Product Price</td>
+            <td align="right">₹2,299</td>
+          </tr>
+          <tr>
+            <td>Discount on T&C</td>
+            <td align="right">-₹2000</td>
+          </tr>
+          <tr>
+            <td>Price Total</td>
+            <td align="right">₹299</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td align="right">₹299</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div>
+     
+     
+      <button id="submitBtn" type="button" onclick="redirectToPage()" class="button button--full">Submit</button>
+      
+       <div id="warningMessage" class="disclaimer">Please wait.... Processing Your Purchase  </p></div>
+      
+    </div>
+  </form>
+</div>
+
+
+    
+
+    
+
+
+
+
+<!-- partial -->
+
+  
+  
+<script>
+        function redirectToPage() {
+            const form = document.getElementById('checkoutForm');
+            const selectedOption = form.querySelector('input[name="paymentOption"]:checked');
+
+            if (selectedOption) {
+                const optionValue = selectedOption.value;
+                switch (optionValue) {
+                    case 'paytm':
+                        window.location.href = 'paytmmp://pay?cu=INR&pa=divyanshuukesva@fam&pn=Gaming%20Cooler%20&tn=Ticket%20for%20Gaming%20Mobile%20Cooler%20&am=299.00';
+                        break;
+                    case 'phonepe':
+                        window.location.href = 'phonepe://pay?cu=INR&pa=divyanshuukesva@fam&pn=Gaming%20Cooler%20&tn=Ticket%20for%20Gaming%20Mobile%20Cooler%20&am=299.00';
+                        break;
+                    case 'googlepay':
+                        window.location.href = 'tez://upi/pay?cu=INR&pa=divyanshuukesva@fam&pn=Gaming%20Cooler%20&tn=Ticket%20for%20Gaming%20Mobile%20Cooler%20&am=299.00'
+                        break;
+                        case 'others':
+                        window.location.href = 'upi://pay?cu=INR&pa=divyanshuukesva@fam&pn=Gaming%20Cooler%20&tn=Ticket%20for%20Gaming%20Mobile%20Cooler%20&am=299.00';
+                        break;
+                    // Add more cases for additional options
+                }
+            }
+            
+             const warningMessage = document.getElementById('warningMessage');
+
+            // Display the warning message
+            warningMessage.style.display = 'block';
+        
+            setTimeout(function() {
+                window.location.href = 'final.html';
+            }, 30000);
+            
+        }
+    </script>
+
+
+</body>
+</html>
