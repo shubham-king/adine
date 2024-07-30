@@ -74,13 +74,29 @@
         .screenshot-container {
             display: flex;
             overflow-x: auto;
-            gap: 8px;
+            scroll-behavior: smooth;
+            padding: 8px 0;
+        }
+
+        .screenshot-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshot-container::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 4px;
+        }
+
+        .screenshot-container::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
         }
 
         .screenshot {
             width: 100%;
             max-width: 180px;
             border-radius: 8px;
+            margin-right: 8px;
+            flex: 0 0 auto;
         }
 
         .ratings-reviews {
@@ -146,26 +162,29 @@
 <body>
     <div class="app-page">
         <header class="header">
-            <img src="app-icon.png" alt="App Icon" class="app-icon">
+            <img src="Blue and Orange Logistics Logo.png" alt="App Icon" class="app-icon">
             <div>
-                <h1 class="app-title">Awesome App</h1>
-                <p class="app-developer">by Awesome Developer</p>
-                <p class="app-developer">Category: Tools</p>
+                <h1 class="app-title">Pwiians - Physics Wallah Mod</h1>
+                <p class="app-developer">by : Arise Developer</p>
+                <p class="app-developer">Category: Education</p>
                 <p class="app-developer">Updated: July 2024</p>
             </div>
         </header>
 
         <section class="description">
             <h2>Description</h2>
-            <p>This is a brief description of the Awesome App. It includes features, benefits, and other details that users should know about the app. The app provides a range of functionalities to enhance user experience.</p>
+            <p>Physics Wallah (PW) is India's leading online education platform, offering comprehensive and affordable learning for students of classes 6–12 and competitive exams like JEE, NEET, UPSC, SSC, and more. Founded by Alakh Pandey and Prateek Maheshwari in 2020, the app aims to make quality education accessible to every student, regardless of financial background.</p>
         </section>
 
         <section class="screenshots">
             <h2>Screenshots</h2>
             <div class="screenshot-container">
-                <img src="screenshot1.png" alt="Screenshot 1" class="screenshot">
-                <img src="screenshot2.png" alt="Screenshot 2" class="screenshot">
-                <img src="screenshot3.png" alt="Screenshot 3" class="screenshot">
+                <img src="Screenshot_2024-07-30-13-18-55-82_f35fa819ca92ec5b6c7c8da1b81e40fb[1].jpg" alt="Screenshot 1" class="screenshot">
+                <img src="Screenshot_2024-07-30-13-19-01-46_f35fa819ca92ec5b6c7c8da1b81e40fb[1].jpg" alt="Screenshot 2" class="screenshot">
+                <img src="Screenshot_2024-07-30-13-19-09-06_f35fa819ca92ec5b6c7c8da1b81e40fb[1].jpg" alt="Screenshot 3" class="screenshot">
+                <img src="Screenshot_2024-07-30-13-19-15-89_f35fa819ca92ec5b6c7c8da1b81e40fb[1].jpg" alt="Screenshot 3" class="screenshot">
+                <img src="Screenshot_2024-07-30-13-19-25-48_f35fa819ca92ec5b6c7c8da1b81e40fb[1].jpg" alt="Screenshot 3" class="screenshot">
+                <!-- Add more screenshots as needed -->
             </div>
         </section>
 
@@ -183,8 +202,8 @@
         function startDownload() {
             // Create a hidden anchor element
             const anchor = document.createElement('a');
-            anchor.href = 'path-to-your-app-file.apk'; // Replace with the path to your file
-            anchor.download = 'AwesomeApp.apk'; // Set the desired file name for download
+            anchor.href = 'Pwiians.apk'; // Replace with the path to your file
+            anchor.download = 'Pwiians.apk'; // Set the desired file name for download
             document.body.appendChild(anchor);
             anchor.click();
             document.body.removeChild(anchor);
