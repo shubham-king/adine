@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Store App Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .app-page {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 16px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 16px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 8px;
+            margin-right: 16px;
+        }
+
+        .app-title {
+            font-size: 22px;
+            margin: 0;
+            color: #333;
+        }
+
+        .app-developer {
+            color: #888;
+            margin: 4px 0;
+        }
+
+        .description {
+            margin-bottom: 16px;
+        }
+
+        .description h2 {
+            font-size: 18px;
+            margin: 0 0 8px 0;
+        }
+
+        .description p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .screenshots {
+            margin-bottom: 16px;
+        }
+
+        .screenshots h2 {
+            font-size: 18px;
+            margin: 0 0 8px 0;
+        }
+
+        .screenshot-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 8px;
+        }
+
+        .screenshot {
+            width: 100%;
+            max-width: 180px;
+            border-radius: 8px;
+        }
+
+        .ratings-reviews {
+            margin-bottom: 16px;
+        }
+
+        .ratings-reviews h2 {
+            font-size: 18px;
+            margin: 0 0 8px 0;
+        }
+
+        .ratings-reviews p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer {
+            border-top: 1px solid #ddd;
+            padding-top: 16px;
+        }
+
+        .install-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #34b7f1;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .install-button:hover {
+            background-color: #0288d1;
+        }
+
+        @media (max-width: 600px) {
+            .app-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .app-title {
+                font-size: 20px;
+            }
+
+            .description p,
+            .ratings-reviews p {
+                font-size: 13px;
+            }
+
+            .screenshot {
+                max-width: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-page">
+        <header class="header">
+            <img src="app-icon.png" alt="App Icon" class="app-icon">
+            <div>
+                <h1 class="app-title">Awesome App</h1>
+                <p class="app-developer">by Awesome Developer</p>
+                <p class="app-developer">Category: Tools</p>
+                <p class="app-developer">Updated: July 2024</p>
+            </div>
+        </header>
+
+        <section class="description">
+            <h2>Description</h2>
+            <p>This is a brief description of the Awesome App. It includes features, benefits, and other details that users should know about the app. The app provides a range of functionalities to enhance user experience.</p>
+        </section>
+
+        <section class="screenshots">
+            <h2>Screenshots</h2>
+            <div class="screenshot-container">
+                <img src="screenshot1.png" alt="Screenshot 1" class="screenshot">
+                <img src="screenshot2.png" alt="Screenshot 2" class="screenshot">
+                <img src="screenshot3.png" alt="Screenshot 3" class="screenshot">
+            </div>
+        </section>
+
+        <section class="ratings-reviews">
+            <h2>Ratings & Reviews</h2>
+            <p>★★★★☆ (4.5 based on 1000 reviews)</p>
+        </section>
+
+        <footer class="footer">
+            <button class="install-button" onclick="startDownload()">Install</button>
+        </footer>
+    </div>
+
+    <script>
+        function startDownload() {
+            // Create a hidden anchor element
+            const anchor = document.createElement('a');
+            anchor.href = 'path-to-your-app-file.apk'; // Replace with the path to your file
+            anchor.download = 'AwesomeApp.apk'; // Set the desired file name for download
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+        }
+    </script>
+</body>
+</html>
