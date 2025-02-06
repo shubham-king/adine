@@ -1,16 +1,203 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatic Redirect</title>
-    <script type="text/javascript">
-        window.onload = function() {
-            window.location.href = "https://poawooptugroo.com/4/8858588"; // Change the URL here
-        };
-    </script>
-</head>
-<body>
-    <p>If you are not redirected, <a href="https://www.example.com">click here</a>.</p>
-</body>
-</html>
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide">
+            <div class="slide-image" style="background: url('anime_image.jpg') no-repeat center/cover;"></div>
+            <div class="slide-content">
+                <span class="spotlight">#4 Spotlight</span>
+                <h2>No Longer Allowed In Another World</h2>
+                <div class="meta-info">
+                    <span>📺 TV</span>
+                    <span>⏳ 23m</span>
+                    <span>📅 Jul 9, 2024</span>
+                    <span class="hd">HD</span>
+                    <span class="cc">CC 12</span>
+                    <span class="audio">🎤 12</span>
+                </div>
+                <p>An adventure in another world with cute girls by your side and video game-like powers—sounds like an anime fan's dream, right? Not so for melancholic author Osamu Dazai, who would quite literally prefer to drop dead. Video games haven't even been invented yet when he gets yanked into anothe...</p>
+                <div class="buttons">
+                    <button class="watch-now">▶ Watch Now</button>
+                    <button class="detail">Detail ➤</button>
+                </div>
+            </div>
+        </div>
+        <!-- Add more slides here -->
+    </div>
+    <button class="prev" aria-label="Previous Slide">❮</button>
+    <button class="next" aria-label="Next Slide">❯</button>
+</div>
+
+<style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* Slide */
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end; /* Content at the bottom */
+}
+
+.slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.meta-info span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.buttons button:hover {
+    background: #e03e3e;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    z-index: 2;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 400px;
+    }
+
+    .slide-content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .meta-info {
+        display: none; /* Hide meta-info on mobile */
+    }
+
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .prev, .next {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        height: 300px;
+    }
+
+    .slide-content {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .buttons button {
+        padding: 8px 16px;
+        font-size: 0.8em;
+    }
+}
+</style>
