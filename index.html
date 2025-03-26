@@ -71,6 +71,39 @@
             border-radius: 10px;
         }
     </style>
+
+    <script>
+    async function detectCountryAndRedirect() {
+        try {
+            let response = await fetch("https://ipinfo.io/json?token=15fbe45935a7ba");
+            let data = await response.json();
+            let userCountry = data.country; // e.g., "FR" for France
+    
+            // Map countries to Google Translate languages
+            let languageMap = {
+                "FR": "fr", "DE": "de", "ES": "es", "IT": "it", "JP": "ja", "CN": "zh-CN", "IN": "hi"
+            };
+    
+            // Get user language
+            let userLang = languageMap[userCountry] || "en";
+    
+            // Prevent redirection if already translated
+            if (!localStorage.getItem("translated")) {
+                let currentUrl = window.location.href;
+                let googleTranslateUrl = `https://translate.google.com/translate?hl=${userLang}&sl=auto&u=${encodeURIComponent(currentUrl)}`;
+                
+                // Redirect
+                window.location.href = googleTranslateUrl;
+                localStorage.setItem("translated", "true"); // Avoid looping redirects
+            }
+        } catch (error) {
+            console.error("Location detection failed:", error);
+        }
+    }
+    
+    // Run on page load
+    window.onload = detectCountryAndRedirect;
+    </script>
 </head>
 <body>
     <div class="container">
